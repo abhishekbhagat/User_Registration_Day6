@@ -13,7 +13,7 @@ public class UserValidateTest {
 	}
 
 	@Test
-	public void givenFirstName_WhenProper_ShouldReturnFalse() {
+	public void givenFirstName_WhenNotProper_ShouldReturnFalse() {
 		UserValidate uservalidate = new UserValidate();
 		boolean result = uservalidate.validFirstName("abhisehk");
 		Assert.assertEquals(false, result);
@@ -27,23 +27,37 @@ public class UserValidateTest {
 	}
 
 	@Test
-	public void givenLast_WhenProper_ShouldReturnFalse() {
+	public void givenLast_WhenNotProper_ShouldReturnFalse() {
 		UserValidate uservalidate = new UserValidate();
-		boolean result = uservalidate.validLastName("Abhisehk");
+		boolean result = uservalidate.validLastName("abhisehk");
 		Assert.assertEquals(false, result);
 	}
 
 	@Test
 	public void givenEmailId_WhenProper_ShouldReturnTrue() {
 		UserValidate uservalidate = new UserValidate();
-		boolean result = uservalidate.validEmailId("Abhisehk");
+		boolean result = uservalidate.validEmailId("afn@gmail.com");
 		Assert.assertEquals(true, result);
 	}
 
 	@Test
 	public void givenEmailId_WhenNotProper_ShouldReturnFalse() {
 		UserValidate uservalidate = new UserValidate();
-		boolean result = uservalidate.validEmailId("Abhisehk");
+		boolean result = uservalidate.validEmailId("adfh.gmai.com");
+		Assert.assertEquals(false, result);
+	}
+
+	@Test
+	public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+		UserValidate uservalidate = new UserValidate();
+		boolean result = uservalidate.validMobileNumber("7209300456");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenMobileNumber_WhenNotProper_ShouldReturnFalse() {
+		UserValidate uservalidate = new UserValidate();
+		boolean result = uservalidate.validMobileNumber("0930045612354");
 		Assert.assertEquals(false, result);
 	}
 }
