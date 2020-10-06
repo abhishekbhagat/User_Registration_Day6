@@ -64,14 +64,14 @@ public class UserValidateTest {
 	@Test
 	public void givenPassword_WhenNotProper_ShouldReturnFalse() {
 		UserValidate uservalidate = new UserValidate();
-		boolean result = uservalidate.validPassword("Abhisehk");
+		boolean result = uservalidate.validPassword("Abhise12hk");
 		Assert.assertEquals(false, result);
 	}
 
 	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
 		UserValidate uservalidate = new UserValidate();
-		boolean result = uservalidate.validPassword("Abi13ksdfjlsdfj");
+		boolean result = uservalidate.validPassword("Abi13@ksdfjlsdfj");
 		Assert.assertEquals(true, result);
 	}
 }
